@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="OppgaveCSS.css">
 </head>
 
-<body>
+<body id="sideId">
     <div class="h1">
     <h1>Team4ward</h1>
     </div>
@@ -17,34 +17,42 @@
     <h3>Har startet et kurs på
             <a href="http://getacademy.no">GetAccademy</a> sammen.
     </h3>
-    <div class="benedicte">
+
+    <button onclick="sideId()">Bakgrunn farge</button>
+
+    <div id="benedicteDiv" class="benedicte">
     <p>Benedicte bor i Fredrikstad, fritiden går mest til:</p> 
         <ul>
             <li>Gaming</li>
             <li>Konserter</li>
             <li>True Crime</li>
         </ul>
+        <button onclick="benedicteChangeColor()">Endre farge</button>
     </div>
 
-    <div class="Madiha">
+    <div class="Madiha" id="check">
          <p>Madiha bor i Oslo, på Bjørndal. Liker å spise god mat og i fritiden liker å: </p>
             <ul>
                 <li>Ser på videoer</li>
                 <li>Gå på tur</li>
                 <li>Tilbringe tid sammen med familien</li>
             </ul>
+
+            <button onclick="madihaChangeColor()" >Change Background<button>
           
          </div>
     
-    <div class="Michael">
+    <div id="MichaelDiv" class="Michael">
         <p>Michael, bor i Askim</p>
         <ul>
             <li>IT-Sikkerhet</li>
             <li>Gaming</li>
             <li>Koding</li>
         </ul>
+
+        <button onclick="michaelDivColor()">Michael sin farge</button>
     </div>
-    <div class="Hege">
+    <div id="hegeDiv" class="Hege">
     <p>Hege bor i Stange og fritiden går mest til:</p>
     <ul>
         <li>Nintendo</li>
@@ -52,7 +60,30 @@
         <li>Være med venner</li>
         <li>Samle på Pokemon kort</li>
     </ul>
+    <button onclick="bgColorChange()">Hege sin farge</button>
     </div>
+
+    <script>
+        function benedicteChangeColor(){
+            document.getElementById("benedicteDiv").style.backgroundColor = 'yellow';
+        }
+        function bgColorChange() {
+            document.getElementById("hegeDiv").style.backgroundColor = 'pink';
+        }
+        function michaelDivColor() {
+            document.getElementById("MichaelDiv").style.backgroundColor = 'grey'
+        }
+
+        function madihaChangeColor(){
+            document.getElementById('check').style.backgroundColor = 'blue';
+        }
+        function sideId(){
+            document.getElementById('sideId').style.backgroundColor = 'red'
+        }
+    </script>
+
+
+
 </body>
 
 </html>
@@ -63,4 +94,13 @@ Lag en enkel HTML-side:
 <h2> Med navn
 <p> der hver av dere skriver én setning (hvor dere bor + noe dere liker)
 <style> legg til litt enkel stil (f.eks. farge på teksten)
-lagre som index.html-->
+lagre som index.html
+Bygg videre på siden dere lagde i går:
+• legg til en knapp
+• når dere klikker på den → bytt farge på siden
+• bruk CSS hvis dere vil
+- lag en team repo på github
+• push til repo når dere er klare
+
+Dette er kun for å bli trygge på HTML + CSS + JavaScript sammen 💚
+Det er helt greit om dere bare får det litt til. Ping meg hvis dere sitter fast 🙌-->
