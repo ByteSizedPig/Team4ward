@@ -13,9 +13,9 @@
     <h1>Team4ward</h1>
     </div>
     <img src="team4ward.png" class="img"/>
-    <h2>Benedicte, Madiha, Michael og Hege</h2>
+    <h2>Benedicte, Madiha, Michael, Hege og Erik</h2>
     <h3>Har startet et kurs på
-            <a href="http://getacademy.no">GetAccademy</a> sammen.
+            <a href="http://getacademy.no">GetAcademy</a> sammen.
     </h3>
 
     <button onclick="sideId()">Bakgrunn farge</button>
@@ -63,7 +63,22 @@
     <button onclick="bgColorChange()">Hege sin farge</button>
     </div>
 
+    <div id="ET" class="Erik">
+        <p>Erik bor på Nøtterøy nær Tønsberg og liker blant annet: </p>
+        <ul>
+            <li>Pixel art, 3D-modellering, 2D og 3D animasjon</li>
+            <li>Musikk innen alt fra klassisk til prog-metal til cheesy 80-talls låter</li>
+            <li>Koreansk mat</li>
+            <li>Filmer, TV-serier og bøker i alle mulige sjangere. Tokyo Vice er en nylig favoritt</li>
+            <li>Retrospill, Soulsborne-spill</li>
+        </ul>
+        <button onclick="erikChangeColour()">Eriks farge</button>
+    </div>
+        
     <script>
+        let backgroundColor = "";
+        let counter = 0;
+
         function benedicteChangeColor(){
             document.getElementById("benedicteDiv").style.backgroundColor = 'yellow';
         }
@@ -77,9 +92,21 @@
         function madihaChangeColor(){
             document.getElementById('check').style.backgroundColor = 'blue';
         }
-        function sideId(){
-            document.getElementById('sideId').style.backgroundColor = 'red'
+
+        function erikChangeColour(){
+            document.getElementById('ET').style.backgroundColor = 'green';
         }
+        
+        function sideId(){
+            counter++
+                if (counter <= 1) {
+                   document.getElementById('sideId').style.backgroundColor = 'blue'
+                }
+                else {
+                    counter = 0;
+                    document.getElementById('sideId').style.backgroundColor = 'rgb(186, 240, 147)'
+                }
+            }
     </script>
 
 
