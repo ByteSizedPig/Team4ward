@@ -99,12 +99,20 @@
         
         function sideId(){
             counter++
-                if (counter <= 1) {
-                   document.getElementById('sideId').style.backgroundColor = 'blue'
-                }
-                else {
-                    counter = 0;
-                    document.getElementById('sideId').style.backgroundColor = 'rgb(186, 240, 147)'
+            // gaffateip løsningen til Michael
+               // if (counter <= 1) {
+               //    document.getElementById('sideId').style.backgroundColor = 'blue'
+               // }
+                //else {
+               //     counter = 0;
+                //    document.getElementById('sideId').style.backgroundColor = 'rgb(186, 240, 147)'
+                //}
+                // Tenkte jeg skulle prøve et alternativ med switch/case.. counter går opp med en hver gang funksjonen kalles. Dermed blir den 1 første gang
+                // Hvis counter er noe som helst annet enn 1, altså 2 eller 5 eller 0 osv, så kjører default: og counter blir satt til 0 igjen
+                switch(counter)
+                {
+                    case 1: document.getElementById('sideId').style.backgroundColor = 'blue'; break;
+                    default: counter = 0; document.getElementById('sideId').style.backgroundColor = 'rgb(186, 240, 147)'; break;
                 }
             }
     </script>
