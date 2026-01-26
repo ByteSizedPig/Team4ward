@@ -96,6 +96,7 @@
     <script>
         let backgroundColor = "";
         let counter = 0;
+        let counter_erik = 0;
 
         function benedicteChangeColor(){
             document.getElementById("benedicteDiv").style.backgroundColor = 'yellow';
@@ -112,7 +113,11 @@
         }
 
         function erikChangeColour(){
-            document.getElementById('ET').style.backgroundColor = 'green';
+            counter_erik += 1;        // samme som counter_et++
+            switch (counter_erik) {
+                case 1: document.getElementById('ET').style.backgroundColor = 'green'; break;
+                default: document.getElementById('ET').style.backgroundColor = ""; counter_erik = 0; break;
+            }
         }
         
         function sideId(){
