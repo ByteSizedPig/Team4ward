@@ -21,6 +21,7 @@
         Verktøy
     </div>
     <div id="toolsInfo"></div>
+    <div id="jsHtmlInfo"></div>
     
 
     <script>
@@ -45,6 +46,29 @@
             `
             console.log("testing")
         }
+
+        function js_html()
+        {
+            document.getElementById("jsHtmlInfo").innerHTML = /*HTML*/`
+        	<p>
+              Vi bruker CSS til å <i>style</i> et dokument, altså farger, fonter, utseende og lignende.
+			<ul>
+                <li style="font-size:14px">background-color</li>
+                <li>color</li>
+                <li>padding</li>
+                <li>margin</li>
+                <li>border</li>
+                <li>text-align</li>
+                <li>font-size</li>
+                <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">Flexbox</a></li>
+                <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/">Grid</a></li>
+                <li><a href="https://www.w3schools.com/css/default.asp">W3Schools CSS Tutorial</a></li>
+                <li><a href="https://www.w3schools.com/cssref/default.asp">W3Schools CSS Reference</a></li>
+    		</ul>
+        </p>
+        `
+        }
+
     </script>
 </body>
 </html>
