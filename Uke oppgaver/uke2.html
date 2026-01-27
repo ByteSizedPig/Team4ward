@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ukecss.css">
+</head>
+
+<body>
+    <div>
+        <button>Ingen layout</button>
+        <button>Vertikal layout</button>
+        <button>Horisontal layout</button>
+        <button>Grid layout</button>
+    </div>
+    <h1>Eksempel 1</h1>
+    <div id="tool" onclick="tools()">
+        <div class="toolCSS">
+        Verktøy
+    </div>
+    <div id="toolsInfo"></div>
+    
+
+    <script>
+        function tools() {
+            document.getElementById("toolsInfo").innerHTML = /*HTML*/`
+            <p>
+                De to viktigste verktøyene vi skal bruke er disse:
+                <ul> 
+                    <li>
+                        Koderedigeringsprogrammet <a href="https://code.visualstudio.com/">Visual Studio Code</a>
+                        <ul> 
+                            Vi skal bruke noen <i>extensions</i>:
+                            <li>JavaScript-booster</li>
+                            <li>es6-string-html</li>
+                            <li>live-server</li>
+                            <li>live-share</li>
+                        </ul>
+                    </li>
+                    <li>Nettleseren <a href="https://www.google.com/intl/no/chrome/">Google Chrome</a>
+                </ul>
+            </p>
+            `
+            console.log("testing")
+        }
+    </script>
+</body>
+</html>
+
+

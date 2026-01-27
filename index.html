@@ -8,97 +8,104 @@
     <link rel="stylesheet" href="OppgaveCSS.css">
 </head>
 
+
 <body id="sideId">
-    <div class="h1">
-    <h1>Team4ward</h1>
-    </div>
-    <img src="team4ward.png" class="img"/>
-    <h2>Benedicte, Madiha, Michael, Hege og Erik</h2>
-    <h3>Har startet et kurs på
-            <a href="http://getacademy.no">GetAcademy</a> sammen.
-    </h3>
-
-    <button onclick="sideId()">Bakgrunn farge</button>
-
-    <select id="nameList">
-        <option>Personer</option>
-        <option value="benedicteList">Benedicte</option>
-        <option value="madihaList">Madiha</option>
-        <option value="erikList">Erik</option>
-        <option value="michaelList">Michael</option>
-        <option value="hegeList">Hege</option>
-    </select>
-
-   <input id="infoInput" type="text" placeholder="Skriv her"/>
-
-   <section>
-    Hei på deg!
-   </section>
-   
-    <button onclick="addInfo()">Legg til</button>
-
-    <div id="benedicteDiv" class="benedicte">
-    <p>Benedicte bor i Fredrikstad, fritiden går mest til:</p> 
-        <ul id="benedicteList">
-            <li>Gaming</li>
-            <li>Konserter</li>
-            <li>True Crime</li>
-        </ul>
-        <button onclick="benedicteChangeColor()">Endre farge</button>
-    </div>
-
-    <div class="Madiha" id="check">
-         <p>Madiha bor i Oslo, på Bjørndal. Liker å spise god mat og i fritiden liker å: </p>
-            <ul id="madihaList">
-                <li>Ser på videoer</li>
-                <li>Gå på tur</li>
-                <li>Tilbringe tid sammen med familien</li>
-            </ul>
-
-            <button onclick="madihaChangeColor()" >Change Background</button>
-          
-         </div>
-    
-    <div id="MichaelDiv" class="Michael">
-        <p>Michael, bor i Askim</p>
-        <ul id=michaelList>
-            <li>IT-Sikkerhet</li>
-            <li>Gaming</li>
-            <li>Koding</li>
-        </ul>
-
-        <button onclick="michaelDivColor()">Michael sin farge</button>
-    </div>
-    <div id="hegeDiv" class="Hege">
-    <p>Hege bor i Stange og fritiden går mest til:</p>
-    <ul id="hegeList">
-        <li>Nintendo</li>
-        <li>Lydbøker og podcast</li>
-        <li>Være med venner</li>
-        <li>Samle på Pokemon kort</li>
-    </ul>
-    <button onclick="bgColorChange()">Hege sin farge</button>
-    </div>
-
-    <div id="ET" class="Erik">
-        <p>Erik bor på Nøtterøy nær Tønsberg og liker blant annet: </p>
-        <ul id="erikList">
-            <li>Pixel art, 3D-modellering, 2D og 3D animasjon</li>
-            <li>Musikk innen alt fra klassisk til prog-metal til cheesy 80-talls låter</li>
-            <li>Koreansk mat</li>
-            <li>Filmer, TV-serier og bøker i alle mulige sjangere. Tokyo Vice er en nylig favoritt</li>
-            <li>Retrospill, Soulsborne-spill</li>
-        </ul>
-        <button onclick="erikChangeColour()">Eriks farge</button>
-    </div>
-
-        
+    <div id="test"></div>
     <script>
+        updateView()
+        function updateView() {
+            document.getElementById("test").innerHTML = /*HTML*/`
+            <div class="h1">
+            <h1>Team4ward</h1>
+            </div>
+            <img src="team4ward.png" class="img"/>
+            <h2>Benedicte, Madiha, Michael, Hege og Erik</h2>
+            <h3>Har startet et kurs på
+                    <a href="http://getacademy.no">GetAcademy</a> sammen.
+            </h3>
+
+            <button onclick="sideId()">Bakgrunn farge</button>
+
+            <select id="nameList">
+                <option>Personer</option>
+                <option value="benedicteList">Benedicte</option>
+                <option value="madihaList">Madiha</option>
+                <option value="erikList">Erik</option>
+                <option value="michaelList">Michael</option>
+                <option value="hegeList">Hege</option>
+            </select>
+
+        <input id="infoInput" type="text" placeholder="Skriv her"/>
+
+        <section>
+            Hei på deg!
+        </section>
+        
+            <button onclick="addInfo()">Legg til</button>
+
+            <div id="benedicteDiv" class="benedicte">
+            <p>Benedicte bor i Fredrikstad, fritiden går mest til:</p> 
+                <ul id="benedicteList">
+                    <li>Gaming</li>
+                    <li>Konserter</li>
+                    <li>True Crime</li>
+                </ul>
+                <button onclick="benedicteChangeColor()">Endre farge</button>
+            </div>
+
+            <div class="Madiha" id="check">
+                <p>Madiha bor i Oslo, på Bjørndal. Liker å spise god mat og i fritiden liker å: </p>
+                    <ul id="madihaList">
+                        <li>Ser på videoer</li>
+                        <li>Gå på tur</li>
+                        <li>Tilbringe tid sammen med familien</li>
+                    </ul>
+
+                    <button onclick="madihaChangeColor()" >Change Background</button>
+                
+                </div>
+            
+            <div id="MichaelDiv" class="Michael">
+                <p>Michael, bor i Askim</p>
+                <ul id=michaelList>
+                    <li>IT-Sikkerhet</li>
+                    <li>Gaming</li>
+                    <li>Koding</li>
+                </ul>
+
+                <button onclick="michaelDivColor()">Michael sin farge</button>
+            </div>
+            <div id="hegeDiv" class="Hege">
+            <p>Hege bor i Stange og fritiden går mest til:</p>
+            <ul id="hegeList">
+                <li>Nintendo</li>
+                <li>Lydbøker og podcast</li>
+                <li>Være med venner</li>
+                <li>Samle på Pokemon kort</li>
+            </ul>
+            <button onclick="bgColorChange()">Hege sin farge</button>
+            </div>
+
+            <div id="ET" class="Erik">
+                <p>Erik bor på Nøtterøy nær Tønsberg og liker blant annet: </p>
+                <ul id="erikList">
+                    <li>Pixel art, 3D-modellering, 2D og 3D animasjon</li>
+                    <li>Musikk innen alt fra klassisk til prog-metal til cheesy 80-talls låter</li>
+                    <li>Koreansk mat</li>
+                    <li>Filmer, TV-serier og bøker i alle mulige sjangere. Tokyo Vice er en nylig favoritt</li>
+                    <li>Retrospill, Soulsborne-spill</li>
+                </ul>
+                <button onclick="erikChangeColour()">Eriks farge</button>
+                
+            </div>
+    `
+        }
+
+
         let backgroundColor = "";
         let counter = 0;
-        let counter_erik = 0;
 
-        function benedicteChangeColor(){
+        function benedicteChangeColor() {
             document.getElementById("benedicteDiv").style.backgroundColor = 'yellow';
         }
         function bgColorChange() {
@@ -108,79 +115,37 @@
             document.getElementById("MichaelDiv").style.backgroundColor = 'grey'
         }
 
-        function madihaChangeColor(){
+        function madihaChangeColor() {
             document.getElementById('check').style.backgroundColor = 'blue';
         }
 
-        function erikChangeColour(){
-            counter_erik += 1;        // samme som counter_et++
-            switch (counter_erik) {
-                case 1: document.getElementById('ET').style.backgroundColor = 'green'; break;
-                default: document.getElementById('ET').style.backgroundColor = ""; counter_erik = 0; break;
+        function erikChangeColour() {
+            document.getElementById('ET').style.backgroundColor = 'green';
+        }
+
+
+        function sideId() {
+            counter++
+            // Tenkte jeg skulle prøve et alternativ med switch/case.. counter går opp med en hver gang funksjonen kalles. Dermed blir den 1 første gang
+            // Hvis counter er noe som helst annet enn 1, altså 2 eller 5 eller 0 osv, så kjører default: og counter blir satt til 0 igjen
+            switch (counter) {
+                case 1: document.getElementById('sideId').style.backgroundColor = 'blue'; break;
+                default: counter = 0; document.getElementById('sideId').style.backgroundColor = 'rgb(186, 240, 147)'; break;
             }
         }
-        
-        function sideId(){
-            counter++
-            // gaffateip løsningen til Michael
-               // if (counter <= 1) {
-               //    document.getElementById('sideId').style.backgroundColor = 'blue'
-               // }
-                //else {
-               //     counter = 0;
-                //    document.getElementById('sideId').style.backgroundColor = 'rgb(186, 240, 147)'
-                //}
-                // Tenkte jeg skulle prøve et alternativ med switch/case.. counter går opp med en hver gang funksjonen kalles. Dermed blir den 1 første gang
-                // Hvis counter er noe som helst annet enn 1, altså 2 eller 5 eller 0 osv, så kjører default: og counter blir satt til 0 igjen
-                switch(counter)
-                {
-                    case 1: document.getElementById('sideId').style.backgroundColor = 'blue'; break;
-                    default: counter = 0; document.getElementById('sideId').style.backgroundColor = 'rgb(186, 240, 147)'; break;
-                }
-            }
 
-            function addInfo() {
-                let targetPerson = document.getElementById("nameList").value
-                let targetInfo = document.getElementById("infoInput").value
-                document.getElementById(targetPerson).innerHTML += `<li>${targetInfo}</li>`
-                console.log(targetPerson)
-                console.log()
-            }
+        function addInfo() {
+            let targetPerson = document.getElementById("nameList").value
+            let targetInfo = document.getElementById("infoInput").value
+            document.getElementById(targetPerson).innerHTML += `<li>${targetInfo}</li>`
+            console.log(targetPerson)
+            console.log()
+        }
 
-            function updateView()
-            {
-                /*
-                    Jeg tenker at siden vi ikke kan bruke if/else (eller switch/case så klart) så burde vi omorganisere ting litt.
-                    Det første vi kan gjøre er kanskje å slå sammen alle changeColor() funksjonene vi har akkurat nå til en og fore 
-                    den med parametere for navnene våre og bakgrunnsfarge.
- 
-                    function changeColor(newName,newColor)
-                    {
-                        
-                    }
-                    */
-            }
-</script>
+    </script>
 
 
 
 </body>
 
 </html>
-
-<!-- oppgave
-Lag en enkel HTML-side:
-<h1> med team-navn
-<h2> Med navn
-<p> der hver av dere skriver én setning (hvor dere bor + noe dere liker)
-<style> legg til litt enkel stil (f.eks. farge på teksten)
-lagre som index.html
-Bygg videre på siden dere lagde i går:
-• legg til en knapp
-• når dere klikker på den → bytt farge på siden
-• bruk CSS hvis dere vil
-- lag en team repo på github
-• push til repo når dere er klare
-
-Dette er kun for å bli trygge på HTML + CSS + JavaScript sammen 💚
-Det er helt greit om dere bare får det litt til. Ping meg hvis dere sitter fast 🙌-->
