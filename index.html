@@ -12,6 +12,11 @@
 <body id="sideId">
     <div id="test"></div>
     <script>
+
+        let backgroundColor = "";
+        let counter = 0;
+        let newUser = ""
+
         updateView()
         function updateView() {
             document.getElementById("test").innerHTML = /*HTML*/`
@@ -19,12 +24,13 @@
             <h1>Team4ward</h1>
             </div>
             <img src="team4ward.png" class="img"/>
-            <h2>Benedicte, Madiha, Michael, Hege og Erik</h2>
+            <h2 id ="addnewuser">Benedicte, Madiha, Michael, Hege, Erik</h2>
             <h3>Har startet et kurs på
                     <a href="http://getacademy.no">GetAcademy</a> sammen.
             </h3>
 
             <button onclick="sideId()">Bakgrunn farge</button>
+            
 
             <select id="nameList">
                 <option>Personer</option>
@@ -36,12 +42,13 @@
             </select>
 
         <input id="infoInput" type="text" placeholder="Skriv her"/>
-
-        <section>
-            Hei på deg!
-        </section>
         
             <button onclick="addInfo()">Legg til</button>
+            
+            <section>
+            <input id="newUserInput" type="text" placeholder="Skriv navn" onchange="newUser = this.value">
+            <button onclick="addUser()">Add user</button>
+            </section>
 
             <div id="benedicteDiv" class="benedicte">
             <p>Benedicte bor i Fredrikstad, fritiden går mest til:</p> 
@@ -99,11 +106,9 @@
                 
             </div>
     `
+            
         }
 
-
-        let backgroundColor = "";
-        let counter = 0;
 
         function benedicteChangeColor() {
             document.getElementById("benedicteDiv").style.backgroundColor = 'yellow';
@@ -141,7 +146,12 @@
             console.log(targetPerson)
             console.log()
         }
-
+        
+        function addUser() {
+            document.getElementById("nameList").innerHTML += `
+            <option value="${newUser}">${newUser}</option>`
+            document.getElementById("addnewuser").innerHTML += `, ${newUser} `
+        }
     </script>
 
 
