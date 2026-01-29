@@ -57,7 +57,7 @@
                     <li>Konserter</li>
                     <li>True Crime</li>
                 </ul>
-                <button onclick="benedicteChangeColor()">Endre farge</button>
+                <button onclick="changeColor('benedicteDiv','yellow')">Endre farge</button>
             </div>
 
             <div class="Madiha" id="check">
@@ -68,7 +68,7 @@
                         <li>Tilbringe tid sammen med familien</li>
                     </ul>
 
-                    <button onclick="madihaChangeColor()" >Change Background</button>
+                    <button onclick="changeColor('check','blue')" >Change Background</button>
                 
                 </div>
             
@@ -80,7 +80,7 @@
                     <li>Koding</li>
                 </ul>
 
-                <button onclick="michaelDivColor()">Michael sin farge</button>
+                <button onclick="changeColor('MichaelDiv','grey')">Michael sin farge</button>
             </div>
             <div id="hegeDiv" class="Hege">
             <p>Hege bor i Stange og fritiden går mest til:</p>
@@ -90,7 +90,7 @@
                 <li>Være med venner</li>
                 <li>Samle på Pokemon kort</li>
             </ul>
-            <button onclick="bgColorChange()">Hege sin farge</button>
+            <button onclick="changeColor('hegeDiv','blue')">Hege sin farge</button>
             </div>
 
             <div id="ET" class="Erik">
@@ -102,42 +102,29 @@
                     <li>Filmer, TV-serier og bøker i alle mulige sjangere. Tokyo Vice er en nylig favoritt</li>
                     <li>Retrospill, Soulsborne-spill</li>
                 </ul>
-                <button onclick="erikChangeColour()">Eriks farge</button>
-                
+                <button onclick="changeColor('ET','green')">Eriks farge</button>
             </div>
         `
-            
         }
 
 
-        function benedicteChangeColor() {
-            document.getElementById("benedicteDiv").style.backgroundColor = 'yellow';
-        }
-        function bgColorChange() {
-            document.getElementById("hegeDiv").style.backgroundColor = 'pink';
-        }
-        function michaelDivColor() {
-            document.getElementById("MichaelDiv").style.backgroundColor = 'grey'
-        }
-
-        function madihaChangeColor() {
-            document.getElementById('check').style.backgroundColor = 'blue';
-        }
-
-        function erikChangeColour() {
-            document.getElementById('ET').style.backgroundColor = 'green';
+        function changeColor(newID,newColor)
+        {
+            document.getElementById(newID).style.backgroundColor = newColor;
         }
 
 
         function sideId() {
-            counter++
-            // Tenkte jeg skulle prøve et alternativ med switch/case.. counter går opp med en hver gang funksjonen kalles. Dermed blir den 1 første gang
-            // Hvis counter er noe som helst annet enn 1, altså 2 eller 5 eller 0 osv, så kjører default: og counter blir satt til 0 igjen
-            switch (counter) {
-                case 1: document.getElementById('sideId').style.backgroundColor = 'blue'; break;
-                default: counter = 0; document.getElementById('sideId').style.backgroundColor = 'rgb(186, 240, 147)'; break;
+            if (counter == 0) {
+                document.getElementById('sideId').style.backgroundColor = 'blue'
+                counter++
+            }
+            else {
+                document.getElementById('sideId').style.backgroundColor = 'rgb(186, 240, 147)'
+                counter = 0
             }
         }
+        
 
         function addInfo() {
             let targetPerson = document.getElementById("nameList").value

@@ -8,23 +8,98 @@
     <link rel="stylesheet" href="ukecss.css">
 </head>
 
-<body>
+<body id="app" class="app">
     <div>
-        <button>Ingen layout</button>
-        <button>Vertikal layout</button>
-        <button>Horisontal layout</button>
-        <button>Grid layout</button>
+        <button onclick="noLayout()">Ingen layout</button>
+        <button onclick="verticalLayout()">Vertikal layout</button>
+        <button onclick="horizontalLayout()">Horisontal layout</button>
+        <button onclick="gridLayout()">Grid layout</button>
     </div>
-    <h1>Eksempel 1</h1>
-    <div id="tool" onclick="tools()">
-        <div class="toolCSS">
-        Verktøy
-    </div>
-    <div id="toolsInfo"></div>
-    <div id="jsHtmlInfo"></div>
-    
 
+    <h1>Eksempel 1</h1>
+    <div>
+        <div id="tool" onclick="tools()">
+            <div class="toolCSS green">
+            Verktøy
+            </div>
+            <div id="toolsInfo"></div>
+        </div>  
+
+        <div>
+    <div id="html" onclick="html()">
+        <div class="toolCSS blue">
+        HTML
+        </div>
+        <div id="htmlInfo"></div>
+    </div>
+
+    <div>
+     <div id="css" onclick="css()">
+        <div class="toolCSS red">
+        CSS
+        </div>
+        <div id="cssInfo"></div>
+    </div>
+        
+    <div>
+    <div id="js" onclick="js()">
+        <div class="toolCSS yellow">
+        JS
+        </div>
+        <div id="jsInfo"></div>   
+    </div>    
+
+    <div>
+    <div id="hode" onclick="spill()">
+        <div class="toolCSS dark">
+        Hode, kropp og ben
+        </div> 
+        <div id="hodeInfo"></div>
+        
+        <div>
+            <div id="hodeView" class="bodyPart">
+                <button onclick="hode4()">←</button>
+                <img src="https://getacademy.github.io/Eksempel1/img/head1.png"></img>
+                <button onclick="hode2()">→</button>
+            </div>
+        </div>
+
+        <div id="body" class="bodyPart">
+            <button onclick="body1()">←</button>
+            <img src="https://raw.githubusercontent.com/GetAcademy/Eksempel1/refs/heads/master/img/body1.png">
+            <button onclick="body2()">→</button>
+            </div>
+
+
+        <div id="legs" class="bodyPart">
+            <button onclick="legs4()">←</button>
+            <img src="https://getacademy.github.io/Eksempel1/img/legs1.png"></img>
+            <button onclick="legs2()">→</button>
+        
+    </div>
+    </div>
+
+
+
+        
     <script>
+        //-------------------------LAYOUTS----------------------------
+        function noLayout(){
+            document.getElementById('app').classList.value = '';
+        }
+        function verticalLayout(){
+            noLayout();
+            document.getElementById('app').classList.add('vertical')
+        }
+        function horizontalLayout(){
+            noLayout();
+            document.getElementById('app').classList.add('horizontal')
+        }
+        function gridLayout(){
+            noLayout();
+            document.getElementById('app').classList.add('grid')
+        }
+
         function tools() {
             document.getElementById("toolsInfo").innerHTML = /*HTML*/`
             <p>
@@ -44,13 +119,166 @@
                 </ul>
             </p>
             `
-            console.log("testing")
+
+            }
+
+        
+    function html() {
+        document.getElementById("htmlInfo").innerHTML = /*HTML*/`
+            <p>
+                Vi bruker HTML til å definere et dokument.
+                <ul> 
+                        Koderedigeringsprogrammet <a href="https://code.visualstudio.com/">Visual Studio Code</a>
+                        <li>Tagger for grunnleggende oppsett av en HTML-fil</li>
+                        <li>Tagger for grunnleggende formatering av tekst</li>
+                        <li><div></li>
+                        <li>&ltinput type="text"&gt</li>
+                        <li>&ltbutton&gt</li>
+                        <li>W3Schools HTML Tutorial</li>
+                        <li>W3Schools HTML Reference</li>
+                    <li>Nettleseren <a href="https://www.google.com/intl/no/chrome/">Google Chrome</a>
+                </ul>
+            </p>
+                    `
+    }        
+    
+    function css() {
+        document.getElementById("cssInfo").innerHTML = /*HTML*/`
+        <p> 
+            Vi bruker CSS til å style et dokument, altså farger, fonter, utseende og lignende.
+            <ul>
+                <li>background-color</li>
+                <li> color</li>
+                <li> padding</li>
+                <li> margin</li>
+                <li> border</li>
+                <li> text-align</li>
+                <li> font-size</li>
+                <li> <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank"> Flexbox</li>
+                <li> <a href="https://css-tricks.com/css-grid-layout-guide/" target="_blank"> Grid</li>
+                <li> <a href="https://www.w3schools.com/css/default.asp" target="_blank"> W3Schools CSS Tutorial</li>
+                <li> <a href="https://www.w3schools.com/cssref/index.php" target="_blank"> W3Schools CSS Reference</li>
+            </ul
+            
+                `
+    }
+
+    function js(){
+        document.getElementById("jsInfo").innerHTML = /*HTML*/`
+        <p> Det viktigste vi skal lære er programmeringsspråket JavaScript. Vi skal lære grunnleggende programmering ved å manipulere HTML - og CSS kode på en nettside ved hjelp av JavaScript.</p>
+        <ul>
+            <li>Det finnes en W3Schools JavaScript Tutorial, men her anbefaler vi heller å følge kurset vårt på Moodle.</li>
+            <li> <a href="https://www.w3schools.com/jsref/default.asp">W3Schools JavaScript Reference</li>
+                </ul>
+            `
+                console.log("testingjs")    
+            }
+        
+    function spill(){
+        document.getElementById("hodeInfo").innerHTML = /*HTML*/``
+        
+    }
+            
+    
+
+        function hode1() {
+            document.getElementById("hodeView").innerHTML = `
+                <button onclick="hode4()">←</button>
+                <img src="https://getacademy.github.io/Eksempel1/img/head1.png"></img>
+                <button onclick="hode2()">→</button>
+            `
         }
 
+        function hode2() {
+            document.getElementById("hodeView").innerHTML = `
+                <button onclick="hode1()">←</button>
+                <img src="https://getacademy.github.io/Eksempel1/img/head2.png"></img>
+                <button onclick="hode3()">→</button>
+            `
+        }
+        
+                function hode3() {
+            document.getElementById("hodeView").innerHTML = `
+                <button onclick="hode2()">←</button>
+                <img src="https://getacademy.github.io/Eksempel1/img/head3.png"></img>
+                <button onclick="hode4()">→</button>
+            `
         }
 
+        function hode4() {
+            document.getElementById("hodeView").innerHTML = `
+                <button onclick="hode3()">←</button>
+                <img src="https://getacademy.github.io/Eksempel1/img/head4.png"></img>
+                <button onclick="hode1()">→</button>
+            `
+        }
+
+        function body1(){
+            document.getElementById("body").innerHTML = `
+            <button onclick="body4()">←</button>
+            <img src="https://raw.githubusercontent.com/GetAcademy/Eksempel1/refs/heads/master/img/body1.png"></img>
+            <button onclick="body2()">→</button>
+            `
+        }
+
+        function body2(){
+            document.getElementById("body").innerHTML = `
+            <button onclick="body1()">←</button>
+            <img src="https://raw.githubusercontent.com/GetAcademy/Eksempel1/refs/heads/master/img/body2.png"></img>
+            <button onclick="body3()">→</button>
+            `
+        }
+
+        function body3(){
+            document.getElementById("body").innerHTML = `
+            <button onclick="body2()">←</button>
+            <img src="https://raw.githubusercontent.com/GetAcademy/Eksempel1/refs/heads/master/img/body3.png"></img>
+            <button onclick="body4()">→</button>
+            `
+        }
+
+         function body4(){
+            document.getElementById("body").innerHTML = `
+            <button onclick="body3()">←</button>
+            <img src="https://raw.githubusercontent.com/GetAcademy/Eksempel1/refs/heads/master/img/body4.png"></img>
+            <button onclick="body1()">→</button>
+            `
+        }
+
+        
+
+        function legs1()
+        {
+            document.getElementById("legs").innerHTML = `
+                <button onclick="legs4()">←</button>
+                <img src="https://getacademy.github.io/Eksempel1/img/legs1.png"></img>
+                <button onclick="legs2()">→</button>
+            `
+        }
+        function legs2()
+        {
+            document.getElementById("legs").innerHTML = `
+                <button onclick="legs1()">←</button>
+                <img src="https://getacademy.github.io/Eksempel1/img/legs2.png"></img>
+                <button onclick="legs3()">→</button>
+            `
+        }
+        function legs3()
+        {
+            document.getElementById("legs").innerHTML = `
+                <button onclick="legs2()">←</button>
+                <img src="https://getacademy.github.io/Eksempel1/img/legs3.png"></img>
+                <button onclick="legs4()">→</button>
+            `
+        }
+        function legs4()
+        {
+            document.getElementById("legs").innerHTML = `
+                <button onclick="legs3()">←</button>
+                <img src="https://getacademy.github.io/Eksempel1/img/legs4.png"></img>
+                <button onclick="legs1()">→</button>
+            `
+        }
     </script>
 </body>
 </html>
-
-
