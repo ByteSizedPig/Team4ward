@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="ukecss.css">
 </head>
 
-<body id="app" class="app">
+<body>  
     <div>
         <button onclick="noLayout()">Ingen layout</button>
         <button onclick="verticalLayout()">Vertikal layout</button>
@@ -17,91 +17,90 @@
     </div>
 
     <h1>Eksempel 1</h1>
-    <div>
+    <div id="app">
         <div id="tool" onclick="tools()">
             <div class="toolCSS green">
-            Verktøy
+                Verktøy
             </div>
             <div id="toolsInfo"></div>
-        </div>  
-
-        <div>
-    <div id="html" onclick="html()">
-        <div class="toolCSS blue">
-        HTML
         </div>
-        <div id="htmlInfo"></div>
-    </div>
 
-    <div>
-     <div id="css" onclick="css()">
-        <div class="toolCSS red">
-        CSS
-        </div>
-        <div id="cssInfo"></div>
-    </div>
         
-    <div>
-    <div id="js" onclick="js()">
-        <div class="toolCSS yellow">
-        JS
-        </div>
-        <div id="jsInfo"></div>   
-    </div>    
-
-    <div>
-    <div id="hode" onclick="spill()">
-        <div class="toolCSS dark">
-        Hode, kropp og ben
-        </div> 
-        <div id="hodeInfo"></div>
-        
-        <div>
-            <div id="hodeView" class="bodyPart">
-                <button onclick="hode4()">←</button>
-                <img src="https://getacademy.github.io/Eksempel1/img/head1.png"></img>
-                <button onclick="hode2()">→</button>
-            </div>
-        </div>
-
-        <div id="body" class="bodyPart">
-            <button onclick="body1()">←</button>
-            <img src="https://raw.githubusercontent.com/GetAcademy/Eksempel1/refs/heads/master/img/body1.png">
-            <button onclick="body2()">→</button>
+            <div id="html" onclick="html()">
+                <div class="toolCSS blue">
+                    HTML
+                </div>
+                <div id="htmlInfo"></div>
             </div>
 
 
-        <div id="legs" class="bodyPart">
-            <button onclick="legs4()">←</button>
-            <img src="https://getacademy.github.io/Eksempel1/img/legs1.png"></img>
-            <button onclick="legs2()">→</button>
+            <div id="css" onclick="css()">
+                <div class="toolCSS red">
+                    CSS
+                </div>
+                <div id="cssInfo"></div>
+            </div>
+
+
+            <div id="js" onclick="js()">
+                <div class="toolCSS yellow">
+                    JS
+                </div>
+                <div id="jsInfo"></div>
+            </div>
+
+
+           <div id="hode" onclick="spill()">
+                <div class="toolCSS dark">
+                    Hode, kropp og ben
+                </div>
+                <div id="hodeView" class="bodyPart">
+                    <button onclick="hode4()">←</button>
+                    <img src="https://getacademy.github.io/Eksempel1/img/head1.png">
+                    <button onclick="hode2()">→</button>
+                </div>
+
+                <div id="body" class="bodyPart">
+                    <button onclick="body1()">←</button>
+                    <img src="https://raw.githubusercontent.com/GetAcademy/Eksempel1/refs/heads/master/img/body1.png">
+                    <button onclick="body2()">→</button>
+                </div>
+
+
+                <div id="legs" class="bodyPart">
+                    <button onclick="legs4()">←</button>
+                    <img src="https://getacademy.github.io/Eksempel1/img/legs1.png">
+                    <button onclick="legs2()">→</button>
+                </div>
+
+                <div id="hodeInfo"></div>
+            </div>
+        </div>
         
-    </div>
-    </div>
 
 
 
-        
-    <script>
-        //-------------------------LAYOUTS----------------------------
-        function noLayout(){
-            document.getElementById('app').classList.value = '';
-        }
-        function verticalLayout(){
-            noLayout();
-            document.getElementById('app').classList.add('vertical')
-        }
-        function horizontalLayout(){
-            noLayout();
-            document.getElementById('app').classList.add('horizontal')
-        }
-        function gridLayout(){
-            noLayout();
-            document.getElementById('app').classList.add('grid')
-        }
+        <script>
+            //-------------------------LAYOUTS----------------------------
+            function noLayout() {
+                document.getElementById('app').classList.value = '';
+            }
+            function verticalLayout() {
+                noLayout();
+                document.getElementById('app').classList.add('vertical')
+            }
+            function horizontalLayout() {
+                noLayout();
+                document.getElementById('app').classList.add('horizontal')
+            }
+            function gridLayout() {
+                noLayout();
+                document.getElementById('app').classList.add('grid')
+            }
 
-        function tools() {
-            document.getElementById("toolsInfo").innerHTML = /*HTML*/`
+            function tools() {
+                clearAll();
+                document.getElementById("toolsInfo").innerHTML = /*HTML*/`
             <p>
                 De to viktigste verktøyene vi skal bruke er disse:
                 <ul> 
@@ -122,9 +121,10 @@
 
             }
 
-        
-    function html() {
-        document.getElementById("htmlInfo").innerHTML = /*HTML*/`
+
+            function html() {
+                clearAll();
+                document.getElementById("htmlInfo").innerHTML = /*HTML*/`
             <p>
                 Vi bruker HTML til å definere et dokument.
                 <ul> 
@@ -140,10 +140,11 @@
                 </ul>
             </p>
                     `
-    }        
-    
-    function css() {
-        document.getElementById("cssInfo").innerHTML = /*HTML*/`
+            }
+
+            function css() {
+                clearAll();
+                document.getElementById("cssInfo").innerHTML = /*HTML*/`
         <p> 
             Vi bruker CSS til å style et dokument, altså farger, fonter, utseende og lignende.
             <ul>
@@ -161,124 +162,135 @@
             </ul
             
                 `
-    }
+            }
 
-    function js(){
-        document.getElementById("jsInfo").innerHTML = /*HTML*/`
-        <p> Det viktigste vi skal lære er programmeringsspråket JavaScript. Vi skal lære grunnleggende programmering ved å manipulere HTML - og CSS kode på en nettside ved hjelp av JavaScript.</p>
+            function js() {
+                clearAll();
+                document.getElementById("jsInfo").innerHTML = /*HTML*/`
+        <p> Det viktigste vi skal lære er programmeringsspråket JavaScript. 
+            Vi skal lære grunnleggende programmering ved å manipulere HTML - og CSS kode på en nettside ved hjelp av JavaScript.</p>
         <ul>
             <li>Det finnes en W3Schools JavaScript Tutorial, men her anbefaler vi heller å følge kurset vårt på Moodle.</li>
             <li> <a href="https://www.w3schools.com/jsref/default.asp">W3Schools JavaScript Reference</li>
                 </ul>
             `
-                console.log("testingjs")    
+                console.log("testingjs")
             }
-        
-    function spill(){
-        document.getElementById("hodeInfo").innerHTML = /*HTML*/``
-        
-    }
-            
+
+            function spill() {
+                clearAll();
+                document.getElementById("hodeInfo").innerHTML = /*HTML*/`
+                
+                `
+            }
     
 
-        function hode1() {
-            document.getElementById("hodeView").innerHTML = `
+
+            function clearAll() {
+                document.getElementById("toolsInfo").innerHTML = /*HTML*/``
+                document.getElementById("htmlInfo").innerHTML = /*HTML*/``
+                document.getElementById("cssInfo").innerHTML = /*HTML*/``
+                document.getElementById("jsInfo").innerHTML = /*HTML*/``
+                document.getElementById("hodeInfo").innerHTML = /*HTML*/``
+            }
+
+
+
+            function hode1() {
+                document.getElementById("hodeView").innerHTML = `
                 <button onclick="hode4()">←</button>
-                <img src="https://getacademy.github.io/Eksempel1/img/head1.png"></img>
+                <img src="https://getacademy.github.io/Eksempel1/img/head3.png">
                 <button onclick="hode2()">→</button>
             `
-        }
+            }
 
-        function hode2() {
-            document.getElementById("hodeView").innerHTML = `
+            function hode2() {
+                document.getElementById("hodeView").innerHTML = `
                 <button onclick="hode1()">←</button>
-                <img src="https://getacademy.github.io/Eksempel1/img/head2.png"></img>
+                <img src="https://getacademy.github.io/Eksempel1/img/head3.png">
                 <button onclick="hode3()">→</button>
             `
-        }
-        
-                function hode3() {
-            document.getElementById("hodeView").innerHTML = `
+            console.log("hode2")
+            }
+
+            function hode3() {
+                document.getElementById("hodeView").innerHTML = `
                 <button onclick="hode2()">←</button>
-                <img src="https://getacademy.github.io/Eksempel1/img/head3.png"></img>
+                <img src="https://getacademy.github.io/Eksempel1/img/head3.png">
                 <button onclick="hode4()">→</button>
             `
-        }
+            }
 
-        function hode4() {
-            document.getElementById("hodeView").innerHTML = `
+            function hode4() {
+                document.getElementById("hodeView").innerHTML = `
                 <button onclick="hode3()">←</button>
-                <img src="https://getacademy.github.io/Eksempel1/img/head4.png"></img>
+                <img src="https://getacademy.github.io/Eksempel1/img/head4.png">
                 <button onclick="hode1()">→</button>
             `
-        }
+            }
 
-        function body1(){
-            document.getElementById("body").innerHTML = `
+            function body1() {
+                document.getElementById("body").innerHTML = `
             <button onclick="body4()">←</button>
-            <img src="https://raw.githubusercontent.com/GetAcademy/Eksempel1/refs/heads/master/img/body1.png"></img>
+            <img src="https://raw.githubusercontent.com/GetAcademy/Eksempel1/refs/heads/master/img/body1.png">
             <button onclick="body2()">→</button>
             `
-        }
+            }
 
-        function body2(){
-            document.getElementById("body").innerHTML = `
+            function body2() {
+                document.getElementById("body").innerHTML = `
             <button onclick="body1()">←</button>
-            <img src="https://raw.githubusercontent.com/GetAcademy/Eksempel1/refs/heads/master/img/body2.png"></img>
+            <img src="https://raw.githubusercontent.com/GetAcademy/Eksempel1/refs/heads/master/img/body2.png">
             <button onclick="body3()">→</button>
             `
-        }
+            }
 
-        function body3(){
-            document.getElementById("body").innerHTML = `
+            function body3() {
+                document.getElementById("body").innerHTML = `
             <button onclick="body2()">←</button>
-            <img src="https://raw.githubusercontent.com/GetAcademy/Eksempel1/refs/heads/master/img/body3.png"></img>
+            <img src="https://raw.githubusercontent.com/GetAcademy/Eksempel1/refs/heads/master/img/body3.png">
             <button onclick="body4()">→</button>
             `
-        }
+            }
 
-         function body4(){
-            document.getElementById("body").innerHTML = `
+            function body4() {
+                document.getElementById("body").innerHTML = `
             <button onclick="body3()">←</button>
-            <img src="https://raw.githubusercontent.com/GetAcademy/Eksempel1/refs/heads/master/img/body4.png"></img>
+            <img src="https://raw.githubusercontent.com/GetAcademy/Eksempel1/refs/heads/master/img/body4.png">
             <button onclick="body1()">→</button>
             `
-        }
+            }
 
-        
 
-        function legs1()
-        {
-            document.getElementById("legs").innerHTML = `
+            function legs1() {
+                document.getElementById("legs").innerHTML = `
                 <button onclick="legs4()">←</button>
-                <img src="https://getacademy.github.io/Eksempel1/img/legs1.png"></img>
+                <img src="https://getacademy.github.io/Eksempel1/img/legs1.png">
                 <button onclick="legs2()">→</button>
             `
-        }
-        function legs2()
-        {
-            document.getElementById("legs").innerHTML = `
+            }
+            function legs2() {
+                document.getElementById("legs").innerHTML = `
                 <button onclick="legs1()">←</button>
-                <img src="https://getacademy.github.io/Eksempel1/img/legs2.png"></img>
+                <img src="https://getacademy.github.io/Eksempel1/img/legs2.png">
                 <button onclick="legs3()">→</button>
             `
-        }
-        function legs3()
-        {
-            document.getElementById("legs").innerHTML = `
+            }
+            function legs3() {
+                document.getElementById("legs").innerHTML = `
                 <button onclick="legs2()">←</button>
-                <img src="https://getacademy.github.io/Eksempel1/img/legs3.png"></img>
+                <img src="https://getacademy.github.io/Eksempel1/img/legs3.png">
                 <button onclick="legs4()">→</button>
             `
-        }
-        function legs4()
-        {
-            document.getElementById("legs").innerHTML = `
+            }
+            function legs4() {
+                document.getElementById("legs").innerHTML = `
                 <button onclick="legs3()">←</button>
-                <img src="https://getacademy.github.io/Eksempel1/img/legs4.png"></img>
+                <img src="https://getacademy.github.io/Eksempel1/img/legs4.png">
                 <button onclick="legs1()">→</button>
             `
-        }
-    </script>
+            }
+        </script>
 </body>
+
 </html>
