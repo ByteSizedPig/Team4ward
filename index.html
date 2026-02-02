@@ -14,7 +14,7 @@
     <script>
 
         let backgroundColor = "";
-        let counter = 0;
+        let counter = false;
         let newUser = ""
 
         updateView()
@@ -46,6 +46,8 @@
             <button onclick="addInfo()">Legg til</button>
             
             <section>
+            <!--verdien av this er  <input id="newUserInput" type="text" placeholder="Skriv navn" onchange="console.log(this)">. 
+                this.value i denne sammenhengen er det brukeren taster inn, altså 'input' -->
             <input id="newUserInput" type="text" placeholder="Skriv navn" onchange="newUser = this.value">
             <button onclick="addUser()">Add user</button>
             </section>
@@ -115,14 +117,17 @@
 
 
         function sideId() {
-            if (counter == 0) {
+            //result = truthy
+            if (!counter) {
                 document.getElementById('sideId').style.backgroundColor = 'blue'
-                counter++
+                counter = true
+                
             }
             else {
                 document.getElementById('sideId').style.backgroundColor = 'rgb(186, 240, 147)'
-                counter = 0
+                counter = false
             }
+            console.log(counter)
         }
         
 
@@ -130,8 +135,6 @@
             let targetPerson = document.getElementById("nameList").value
             let targetInfo = document.getElementById("infoInput").value
             document.getElementById(targetPerson).innerHTML += `<li>${targetInfo}</li>`
-            console.log(targetPerson)
-            console.log()
         }
 
         function addUser() {
