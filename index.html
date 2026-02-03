@@ -15,9 +15,47 @@
 
         let backgroundColor = "";
         let counter = false;
-        let newUser = ""
+        let newUser = "";
 
-        updateView()
+
+        updateView();
+
+
+        function changeColor(newID, newColor) {
+            document.getElementById(newID).style.backgroundColor = newColor;
+        }
+
+
+        function sideId() {
+            //result = truthy
+            if (!counter) {
+                document.getElementById('sideId').style.backgroundColor = 'blue';
+                counter = true;
+            }
+            else {
+                document.getElementById('sideId').style.backgroundColor = 'rgb(186, 240, 147)';
+                counter = false;
+            }
+        }
+
+
+        function addInfo() {
+            let targetPerson = document.getElementById("nameList").value;
+            let targetInfo = document.getElementById("infoInput").value;
+            document.getElementById(targetPerson).innerHTML += `<li>${targetInfo}</li>`;
+        }
+
+
+        function addUser() {
+            document.getElementById("nameList").innerHTML += `
+            <option value="${newUser}">${newUser}</option>`;
+            document.getElementById("addnewuser").innerHTML += `, ${newUser} `;
+        }
+
+
+
+        /* updateView med masse HTML */
+
         function updateView() {
             document.getElementById("test").innerHTML = /*HTML*/`
             <div class="h1">
@@ -110,38 +148,34 @@
         }
 
 
-        function changeColor(newID,newColor)
+
+
+
+
+        /*
+        let defaultColor;          // global variabel som inneholder standard-fargen for en bakgrunn, si 'red'
+
+        function changeColor2(newColor)         // <button onclick = "changeColor2('blue')"> for eksempel
         {
-            document.getElementById(newID).style.backgroundColor = newColor;
-        }
-
-
-        function sideId() {
-            //result = truthy
-            if (!counter) {
-                document.getElementById('sideId').style.backgroundColor = 'blue'
-                counter = true
-                
+            if (newColor != defaultColor)
+            {
+                return newColor;
             }
-            else {
-                document.getElementById('sideId').style.backgroundColor = 'rgb(186, 240, 147)'
-                counter = false
-            }
-            console.log(counter)
-        }
-        
+            return defaultColor;
+        }*/
 
-        function addInfo() {
-            let targetPerson = document.getElementById("nameList").value
-            let targetInfo = document.getElementById("infoInput").value
-            document.getElementById(targetPerson).innerHTML += `<li>${targetInfo}</li>`
-        }
 
-        function addUser() {
-            document.getElementById("nameList").innerHTML += `
-            <option value="${newUser}">${newUser}</option>`
-            document.getElementById("addnewuser").innerHTML += `, ${newUser} `
+        /*
+        function addTwoNumbers(a,b){
+        return a+b // Dette er det vi kaller "returverdien" av funksjonen, og det blir kalkulert når vi "caller" funksjonen, altså gjør "addTwoNumbers()"
         }
+    
+        let myNum = addTwoNumbers(10,9) // Her setter vi variabelet "myNum" til resultatet av funksjonen
+    
+        console.log(myNum)
+        */
+
+
     </script>
 
 
