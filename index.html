@@ -11,7 +11,7 @@
 
 <body id="sideId">
     <div id="test"></div>
-    
+
     <script>
 
         let backgroundColor = "";
@@ -90,93 +90,57 @@
             <input id="newUserInput" type="text" placeholder="Skriv navn" onchange="newUser = this.value">
             <button onclick="addUser()">Add user</button>
             </section>
+        ${infoUser("Benedicte")}
+        ${infoMadiha()}
+        ${infoUser("Michael")}
+        ${infoUser("hege")}
+        ${infoUser("idErik")}
         `
-            infoBenedicte();
-            HegeDiv();
-            infoErik();
-            MichaelDiv();
-            infoMadiha();
-            
-        } 
-            
 
-        
-        function infoBenedicte(){
-            
-          let html = document.getElementById("test").innerHTML += /*HTML*/
-           `
-            <div id="benedicteDiv" class="benedicte">
-            <p>Benedicte bor i Fredrikstad, fritiden går mest til:</p> 
-                <ul id="benedicteList">
-                    <li>Gaming</li>
-                    <li>Konserter</li>
-                    <li>True Crime</li>
-                </ul>
-                <button onclick="changeColor('benedicteDiv','yellow')">Endre farge</button>
-            </div>
-            `
-            return html;
         }
 
 
-        function HegeDiv(){
-            let html = document.getElementById("test").innerHTML += /*HTML*/
-            `
-            <div id="hegeDiv" class="Hege">
-            <p>Hege bor i Stange og fritiden går mest til:</p>
-            <ul id="hegeList">
-                <li>Nintendo</li>
-                <li>Lydbøker og podcast</li>
-                <li>Være med venner</li>
-                <li>Samle på Pokemon kort</li>
-            </ul>
-            <button onclick="changeColor('hegeDiv','blue')">Hege sin farge</button>
-            </div>
-            `
-            
-            return html;
-        }
+        /* function HegeDiv(){
+              let html = document.getElementById("test").innerHTML += 
+              `
+              <div id="hegeDiv" class="Hege">
+              <p>Hege bor i Stange og fritiden går mest til:</p>
+              <ul id="hegeList">
+                  <li>Nintendo</li>
+                  <li>Lydbøker og podcast</li>
+                  <li>Være med venner</li>
+                  <li>Samle på Pokemon kort</li>
+              </ul>
+              <button onclick="changeColor('hegeDiv','blue')">Hege sin farge</button>
+              </div>
+              `
+              
+              return html;
+          }
+          */
 
 
 
-        function infoErik()
-        {
-            let html = document.getElementById("test").innerHTML += /*HTML*/ `<div id="ET" class="Erik">
-                <p>Erik bor på Nøtterøy nær Tønsberg og liker blant annet: </p>
-                    <ul id="erikList">
-                        <li>Pixel art, 3D-modellering, 2D og 3D animasjon</li>
-                        <li>Musikk innen alt fra klassisk til prog-metal til cheesy 80-talls låter</li>
-                        <li>Koreansk mat</li>
-                        <li>Filmer, TV-serier og bøker i alle mulige sjangere. Tokyo Vice er en nylig favoritt</li>
-                        <li>Retrospill, Soulsborne-spill</li>
-                    </ul>
-                <button onclick="changeColor('ET','green')">Eriks farge</button>
-            </div>`
-            return html;
-        }
+       
 
 
-
-        function infoUser(newId)
-        {
+        function infoUser(newId) {
             let html = "";
-            if (newId == "Benedicte"){
-              let html = document.getElementById("test").innerHTML += /*HTML*/
-           `
-            <div id="benedicteDiv" class="benedicte">
-            <p>Benedicte bor i Fredrikstad, fritiden går mest til:</p> 
-                <ul id="benedicteList">
-                    <li>Gaming</li>
-                    <li>Konserter</li>
-                    <li>True Crime</li>
-                </ul>
-                <button onclick="changeColor('benedicteDiv','yellow')">Endre farge</button>
-            </div>
-            `  
+            if (newId == "Benedicte") {
+                 return /*HTML*/ ` 
+                <div id="benedicteDiv" class="benedicte">
+                <p>Benedicte bor i Fredrikstad, fritiden går mest til:</p> 
+                    <ul id="benedicteList">
+                        <li>Gaming</li>
+                        <li>Konserter</li>
+                        <li>True Crime</li>
+                    </ul>
+                    <button onclick="changeColor('benedicteDiv','yellow')">Endre farge</button>
+                </div>
+                `
             }
-            else if (newId == "madiha")
-            {
-                html = document.getElementById('test').innerHTML += /*HTML*/ `
+            else if (newId == "madiha") {
+                html = /*HTML*/ `
                 <div class="Madiha" id="check">
                     <p>Madiha bor i Oslo, på Bjørndal. Liker å spise god mat og i fritiden liker å: </p>
                     <ul id="madihaList">
@@ -188,9 +152,8 @@
                     <button onclick="changeColor('check','blue')" >Change Background</button>
                 </div>
            `}
-            else if (newId == "Michael")
-            {
-                let html = document.getElementById("test").innerHTML +=`
+            else if (newId == "Michael") {
+                return `
                     <div id="MichaelDiv" class="Michael">
                         <p>Michael, bor i Askim</p>
                         <ul id=michaelList>
@@ -201,12 +164,11 @@
 
                         <button onclick="changeColor('MichaelDiv','grey')">Michael sin farge</button>
                     </div>
-                    `       
+                    `
             }
-            else if (newId == "ET")
-            {
-                html = document.getElementById("test").innerHTML += `
-                <div id="ET" class="Erik">
+            else if (newId == "idErik") {
+                return /*HTML*/`
+                <div id="idErik" class="classErik">
                     <p>Erik bor på Nøtterøy nær Tønsberg og liker blant annet: </p>
                     <ul id="erikList">
                         <li>Pixel art, 3D-modellering, 2D og 3D animasjon</li>
@@ -215,15 +177,31 @@
                         <li>Filmer, TV-serier og bøker i alle mulige sjangere. Tokyo Vice er en nylig favoritt</li>
                         <li>Retrospill, Soulsborne-spill</li>
                     </ul>
-                    <button onclick="changeColor('ET','green')">Eriks farge</button>
+                    <button onclick="changeColor('idErik','green')">Eriks farge</button>
                 </div>`
             }
-            return html;
+            else if (newId == "hege") {
+                return /*HTML*/` 
+            <div id="hegeDiv" class="Hege">
+            <p>Hege bor i Stange og fritiden går mest til:</p>
+            <ul id="hegeList">
+                <li>Nintendo</li>
+                <li>Lydbøker og podcast</li>
+                <li>Være med venner</li>
+                <li>Samle på Pokemon kort</li>
+            </ul>
+            <button onclick="changeColor('hegeDiv','blue')">Hege sin farge</button>
+            </div>
+            `
+            }
+            
         }
 
 
-            function infoMadiha(){
-                let html = document.getElementById('test').innerHTML += /*HTML*/ ` <div class="Madiha" id="check">
+
+        function infoMadiha() {
+            let html =  /*HTML*/ ` 
+                <div class="Madiha" id="check">
                 <p>Madiha bor i Oslo, på Bjørndal. Liker å spise god mat og i fritiden liker å: </p>
                     <ul id="madihaList">
                         <li>Ser på videoer</li>
@@ -235,29 +213,30 @@
                 
                 </div>
              `
-                 return html
-             
-            }
-              
-             
-            function MichaelDiv() {
-                let html = document.getElementById("test").innerHTML +=`
-                <div id="MichaelDiv" class="Michael">
-                <p>Michael, bor i Askim</p>
-                <ul id=michaelList>
-                    <li>IT-Sikkerhet</li>
-                    <li>Gaming</li>
-                    <li>Koding</li>
-                </ul>
+            return html
 
-                <button onclick="changeColor('MichaelDiv','grey')">Michael sin farge</button>
-            </div>
-                `
-                return html
-            
-            }
+        }
 
-            
+
+
+
+
+
+        /*
+Bygg videre på team-siden deres
+- Lag en variabel som lagrer et valg (f.eks. selectedName).
+- Lag en funksjon som tar inn parameteren, f.eks. name.
+- Bruk if / else til å sjekke parameteren.
+- Funksjonen skal returnere forskjellig HTML (template literal med backticks).
+- Bruk returverdien + variabelen til å oppdatere siden(f.eks. i updateView() eller med innerHTML).
+Dette er kun for å bli trygge på:
+variabler
+funksjoner med parameter
+if / else
+returverdi
+*/
+
+
         /*
         let defaultColor;          // global variabel som inneholder standard-fargen for en bakgrunn, si 'red'
 
